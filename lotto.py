@@ -9,9 +9,6 @@ def exists(numbers, num):
     while i < size and numbers[i] != num:
         i += 1
     return i < size
-numbers = [1,2,3,4,5,6]
-print(exists(numbers, 5)) #True
-print(exists(numbers, 7)) #False
 
 def distinct_random_numbers(min, max, size):
     """
@@ -22,9 +19,13 @@ def distinct_random_numbers(min, max, size):
     requirement: to use the above function "exists" and one while-loop
     """
     #TODO
+    if (max - min + 1) < size:
+        return []
     res = []
-    for i in range(size):
-        res.append(random.randint(min,max))
+    while len(res) < size:
+        num = random.randint(min, max)
+        if not exists(res, num):
+            res.append(num)
     return res
 
 print (distinct_random_numbers(1, 49, 7))
