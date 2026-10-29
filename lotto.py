@@ -19,13 +19,12 @@ def distinct_random_numbers(min, max, size):
     requirement: to use the above function "exists" and one while-loop
     """
     #TODO
-    if (max - min + 1) < size:
-        return []
     res = []
-    while len(res) < size:
-        num = random.randint(min, max)
-        if not exists(res, num):
-            res.append(num)
+    if (max - min + 1) >= size:
+        while len(res) < size:
+            num = random.randint(min, max)
+            if not exists(res, num):
+                res.append(num)
     return res
 
 print (distinct_random_numbers(1, 49, 7))
