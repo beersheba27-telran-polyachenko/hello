@@ -9,7 +9,7 @@ def max_with_negative_duplicate (numbers:list[int]) -> int:
     max_with_negative_duplicate([10, 20, -15, -11, 20]) => -1
     """
 
-    numbers_set: set = set(numbers)
+    numbers_set: set[int] = set(numbers)
     max_value: int = 0
     for num in numbers_set:
         if num > max_value:
